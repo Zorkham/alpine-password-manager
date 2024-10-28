@@ -6,7 +6,11 @@ document.addEventListener("alpine:init", () => {
     includeDigits: Alpine.$persist(true),
     includeSymbols: Alpine.$persist(true),
     includeAmbiguous: Alpine.$persist(true),
-    passwords: Alpine.$persist([{ name: "My Sample Password", password: "Tn|zWq|P@pKx8MQgVN" }]),
+    passwords: Alpine.$persist([
+      { name: "My First Password", password: "Tn|zWq|P@pKx8MQgVN", show: false },
+      { name: "My Second Password", password: "x&Y.Ri6p*:R2)ILx?|R0*_", show: true },
+    ]),
+    maxPasswords: 3,
     password: "",
     passwordStrength: "Weak",
     newPasswordName: "",
@@ -69,7 +73,7 @@ document.addEventListener("alpine:init", () => {
         return;
       }
 
-      this.passwords.push({ name: this.newPasswordName, password: this.password });
+      this.passwords.push({ name: this.newPasswordName, password: this.password, show: false });
       this.newPasswordName = "";
       this.setFeedback("Password stored successfully!", "success");
     },
