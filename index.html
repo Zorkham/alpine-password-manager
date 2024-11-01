@@ -23,28 +23,32 @@
       <h1 class="text-2xl font-bold mb-4 text-center">Password Generator</h1>
 
       <div class="mb-4">
-        <label for="length" class="block text-sm font-medium text-gray-700">Length: <strong
+        <label for="slider-length" class="block text-sm font-medium text-gray-700">Length: <strong
             x-text="length"></strong></label>
-        <input type="range" id="length" x-model="length" min="4" max="40" class="w-full mt-2" aria-valuemin="4"
-          aria-valuemax="40" @input="generatePassword">
+        <input type="range" data-cy="slider-length" id="slider-length" x-model="length" min="4" max="40"
+          class="w-full mt-2" aria-valuemin="4" aria-valuemax="40" @input="generatePassword">
       </div>
 
       <div class="mb-4">
         <div class="mt-2 space-y-2">
           <div>
-            <input type="checkbox" id="uppercase" x-model="includeUppercase" class="mr-2" @change="generatePassword">
+            <input type="checkbox" data-cy="checkbox-uppercase" id="uppercase" x-model="includeUppercase" class="mr-2"
+              @change="generatePassword">
             <label for="uppercase" class="text-sm">Include Uppercase (e.g. ABC)</label>
           </div>
           <div>
-            <input type="checkbox" id="numbers" x-model="includeDigits" class="mr-2" @change="generatePassword">
+            <input type="checkbox" data-cy="checkbox-numbers" id="numbers" x-model="includeDigits" class="mr-2"
+              @change="generatePassword">
             <label for="numbers" class="text-sm">Include Digits (e.g. 123)</label>
           </div>
           <div>
-            <input type="checkbox" id="symbols" x-model="includeSymbols" class="mr-2" @change="generatePassword">
+            <input type="checkbox" data-cy="checkbox-symbols" id="symbols" x-model="includeSymbols" class="mr-2"
+              @change="generatePassword">
             <label for="symbols" class="text-sm">Include Symbols (e.g. @&$!#?)</label>
           </div>
           <div>
-            <input type="checkbox" id="ambiguous" x-model="includeAmbiguous" class="mr-2" @change="generatePassword">
+            <input type="checkbox" data-cy="checkbox-ambiguous" id="ambiguous" x-model="includeAmbiguous" class="mr-2"
+              @change="generatePassword">
             <label for="ambiguous" class="text-sm">Include Ambiguous (e.g. 1Il|, O0, Z2)</label>
           </div>
         </div>
@@ -53,9 +57,9 @@
       <div class="mb-4">
         <label for="generated-password" class="block text-sm font-medium text-gray-700">Password:</label>
         <div class="my-2 relative rounded-md shadow-sm">
-          <input type="text" id="generated-password" x-model="password" readonly aria-readonly="true"
+          <input type="text" data-cy="generated-password" id="generated-password" x-model="password" readonly
             class="block w-full pr-10 py-2 pl-3 text-lg border-gray-300 rounded-md bg-gray-100 cursor-text focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
-            aria-describedby="regenerate-password" role="status" aria-live="polite">
+            aria-readonly="true" aria-describedby="regenerate-password" role="status" aria-live="polite">
           <button type="button" @click="generatePassword" aria-label="Generate new password"
             class="absolute inset-y-0 right-0 flex items-center justify-center w-10 h-full bg-blue-600 text-white rounded-r-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
             <i class="ph ph-arrow-clockwise"></i>
@@ -65,7 +69,7 @@
       </div>
 
       <div class="mb-4">
-        <button type="button" @click="copyToClipboard(password)"
+        <button type="button" data-cy="copy-to-clipboard-button" @click="copyToClipboard(password)"
           class="w-full py-2 px-4 bg-blue-600 text-white rounded-md font-semibold hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
           <i class="ph ph-copy"></i> Copy to Clipboard
         </button>
@@ -114,8 +118,8 @@
       </div>
     </div>
 
-    <p x-text="$store.feedback.message" :class="$store.feedback.type" class="mt-2 text-sm feedback" x-cloak
-      x-show="$store.feedback.message" aria-live="polite">
+    <p data-cy="feedback-message" x-cloak x-show="$store.feedback.message" x-text="$store.feedback.message"
+      :class="$store.feedback.type" class="mt-2 text-sm feedback" aria-live="polite">
     </p>
     </p>
   </main>

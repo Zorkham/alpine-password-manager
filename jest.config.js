@@ -3,13 +3,14 @@ module.exports = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['<rootDir>/dist/', '<rootDir>/node_modules/'],
   collectCoverage: true,
+  coverageProvider: 'v8',
+  coverageReporters: ['html', 'text'],
+  coverageDirectory: 'coverage',
   collectCoverageFrom: [
     'src/**/*.{js,ts,jsx,tsx}',
     '!src/config/**/*',
     '!src/**/*.d.ts'
   ],
-  coverageDirectory: 'coverage',
-  coverageProvider: 'v8',
   transform: {
     '^.+\\.tsx?$': 'ts-jest'
   }

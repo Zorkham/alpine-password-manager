@@ -6,8 +6,9 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["node", "jest"]
   },
-  "include": ["src/**/*", "tests/api.test.ts", "tests/main.test.ts"],
+  "include": ["src/**/*", "tests/**/*.test.ts"],
   "exclude": ["node_modules"]
 }

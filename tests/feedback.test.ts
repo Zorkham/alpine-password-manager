@@ -3,7 +3,7 @@ import { feedback } from '../src/stores/feedback'
 describe('feedback store', () => {
   jest.useFakeTimers()
 
-  afterEach(() => {
+  beforeEach(() => {
     feedback.message = ''
     feedback.type = ''
   })
