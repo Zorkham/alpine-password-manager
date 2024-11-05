@@ -23,7 +23,7 @@
       <h1 class="text-2xl font-bold mb-4 text-center">Password Generator</h1>
 
       <div class="mb-4">
-        <label for="slider-length" class="block text-sm font-medium text-gray-700">Length: <strong
+        <label for="slider-length" class="text-sm block font-medium text-gray-700">Length: <strong
             x-text="length"></strong></label>
         <input type="range" data-cy="slider-length" id="slider-length" x-model="length" min="4" max="40"
           class="w-full mt-2" aria-valuemin="4" aria-valuemax="40" @input="generatePassword">
@@ -120,7 +120,6 @@
 
     <p data-cy="feedback-message" x-cloak x-show="$store.feedback.message" x-text="$store.feedback.message"
       :class="$store.feedback.type" class="mt-2 text-sm feedback" aria-live="polite">
-    </p>
     </p>
   </main>
 

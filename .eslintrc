@@ -15,15 +15,31 @@
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-explicit-any": "warn",
+    "prettier/prettier": "error",
     "no-alert": "error",
+    "import/newline-after-import": [
+      "error",
+      {
+        "count": 1
+      }
+    ],
+    "import/order": [
+      "error",
+      {
+        "groups": [["builtin", "external"], "internal"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ],
     "max-len": [
       "error",
       {
         "code": 120,
         "ignoreComments": true
       }
-    ],
-    "prettier/prettier": "error"
+    ]
   },
   "overrides": [
     {

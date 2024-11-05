@@ -1,10 +1,10 @@
+import 'phosphor-icons'
+
 import Alpine from 'alpinejs'
-import persist from '@alpinejs/persist'
+import { feedback } from './stores/feedback'
 import { passwordGenerator } from './components/passwordGenerator'
 import { passwordManager } from './components/passwordManager'
-import { feedback } from './stores/feedback'
-
-import 'phosphor-icons'
+import persist from '@alpinejs/persist'
 
 // Register Alpine plugins
 Alpine.plugin(persist)

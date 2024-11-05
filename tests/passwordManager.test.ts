@@ -1,5 +1,5 @@
-import { passwordManager } from '../src/components/passwordManager'
 import Alpine from 'alpinejs'
+import { passwordManager } from '../src/components/passwordManager'
 
 // Mock Alpine.$persist
 Alpine.$persist = (value: any) => value

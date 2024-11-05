@@ -1,8 +1,8 @@
 import Alpine from 'alpinejs'
-import persist from '@alpinejs/persist'
+import { feedback } from '../src/stores/feedback'
 import { passwordGenerator } from '../src/components/passwordGenerator'
 import { passwordManager } from '../src/components/passwordManager'
-import { feedback } from '../src/stores/feedback'
+import persist from '@alpinejs/persist'
 
 // Mock the components
 jest.mock('../src/components/passwordGenerator')
